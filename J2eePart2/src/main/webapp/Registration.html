@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BookMgmntSystem</title>
+
+<script>
+  function validateUserName(){
+	 var name = document.getElementById("username").value;
+	 if(name.length >=2){
+		 return true;
+	 }
+	 alert("Username cannot be empty");
+	 return false;
+  }  
+  function validateUserEmail(){
+	  var email = document.getElementById("useremail").value;
+		 if(email.length >= 6){
+			 return true;
+		 }
+		 alert("Email id cannot be blank");
+		 return false;
+  }
+  function validateUserMobile(){
+	  var mobile = document.getElementById("usermobile").value;
+		 if(mobile.length === 10){
+			 return true;
+		 }
+		 alert("Please enter a valid mobile number");
+		 return false;
+  }  
+  function validateUserPassword(){
+	  var password = document.getElementById("userpassword").value;
+	  var confirmpassword = document.getElementById("userconfirmpassword").value;
+		 if (password.length <3 ){
+			 alert("Password cannot be empty and should have atleast 3 characters");
+			 return false;
+		 }
+		 if(password.value === confirmpassword.value){
+			 return true;
+		 }
+		 alert("Password and confirm password should be same");
+		 return false;
+  }
+  
+  function userValidations(){
+	  if(validateUserName() 
+			  && validateUserEmail()
+			  && validateUserMobile() 
+			  && validateUserPassword()){
+		  
+		  document.getElementById("form").submit();
+		 //return true;		  
+	  }
+	  return false;
+  }
+  
+
+</script>
+</head>
+<body>
+
+	<!-- Menu Section -->
+	<div style="float: right">
+		<a href="/Login.html">Login</a>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div>
+		<a href="">Home</a> | 
+		<a href="">About Us</a> |
+		<a href="">Contact Us</a> |
+	</div>
+	<hr>
+	<div>
+		<center>
+		User Registration
+		<form action="./Register" method="post" id="form">
+			UserName: <input type="text" id="username" name="username"/> <br>
+			Email: <input type="email" id="useremail" name="useremail"/> <br>
+			Mobile: <input type="number" id="usermobile" name="usermobile"/> <br>			
+			Password: <input type="password" id="userpassword" name="userpassword"/> <br>
+			Confirm Password: <input type="password" id="userconfirmpassword"/> <br>
+			<br>
+			<button type="button" onclick="userValidations()">Register</button>
+		</form>
+		</center>
+	</div>
+	<hr>
+	<!-- Footer Section -->
+	<div>
+		<center>
+		@Copyrights reserved DAC 2024
+		</center>
+	</div>
+
+</body>
+</html>
