@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="address" class="springexample.Address">
+        	<property name="lane" value="abc"></property>
+        	<property name="city" value="HYD"></property>
+        	<property name="state" value="TG"></property>
+        	<property name="pincode" value="500010"></property>
+        </bean>
+        
+        <bean id="stdBean1" class="springexample.Student"> 
+        	<property name="rollnumber" value="100"></property>
+        	<property name="name" value="ABC"></property>
+        	<property name="branch" value="DAC"></property>
+        	
+        	<property name="addrs" ref="address"></property>
+        </bean>
+        
+        <bean id="stdBean2" class="springexample.Student"> 
+        	<property name="rollnumber" value="101"></property>
+        	<property name="name" value="DEF"></property>
+        	<property name="branch" value="DAC"></property>
+        	
+        	<property name="addrs" ref="address"></property>
+        </bean>
+        
+        
+
+</beans>
